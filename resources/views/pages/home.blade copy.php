@@ -1,18 +1,4 @@
-{{-- @extends('layout.app')
-@section('content')
-    @include('components.home-1')
-    @include('components.home-cat')
-    @include('components.home-footer')
-
-@endsection --}}
-
-
-
-
-
-
-
- @extends('layout.app-testi')
+<!-- @extends('layout.app')
 
 
 @section('content')
@@ -68,8 +54,32 @@
                     </div>
                 </div>
                 <br/>
-                @include('components.home-cat')
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4 p-3">
+                        <div class="card px-0 text-center">
+                            <img class=" card-img-top mb-3 w-100" src="{{asset('/images/hotel-front.jpg')}}" alt="">
+                            <h5>Hotels</h5>
 
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 p-3">
+                        <div class="card px-0 text-center">
+                            <img class=" card-img-top mb-3 w-100" src="{{asset('/images/resturent-front.jpg')}}" alt="">
+                            <h5>Resturents</h5>
+
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4 p-3">
+                        <div class="card px-0 text-center">
+                            <img class=" card-img-top mb-3 w-100" src="{{asset('/images/book-front.jpg')}}" alt="">
+                            <h5>Resturents</h5>
+
+                        </div>
+                    </div>
+
+
+                </div>
             </div>
         </section>
 
@@ -98,14 +108,14 @@
             </div>
         </section>
 
+        <section class="py-5">
+            <div class="container">
+                <div class="row" id="cat">
 
 
-
-
-
-
-
-
+                </div>
+            </div>
+        </section>
 
         <footer class="py-5 bg-light">
             <div class="container text-center pb-5 border-bottom">
@@ -146,15 +156,125 @@
 
 @endsection
 
+{{--
+<script>
+    GetTestimonialList();
+    async function GetTestimonialList(){
+        let URL="/frontcategoryData"
+
+        try {
+            Loader Show Content Hide
+            document.getElementById('loading-div').classList.remove('d-none');
+            document.getElementById('content-div').classList.add('d-none');
+
+            const response = await axios.get(URL);
+
+            document.getElementById('loading-div').classList.add('d-none');
+            document.getElementById('content-div').classList.remove('d-none');
+
+            response.data.forEach((item)=>{
+
+                document.getElementById('client-list').innerHTML+=(`
+
+
+                <div class="testimotionals">
+        <div class="card">
+        <div class="layer">
+
+        </div>
+        <div class="content">
+
+
+            <p>${item['cat']}</p>
+            <div class="image">
+
+
+            <img width="100px" src="${item['image']}" alt="">
+
+            </div>
+
+
+
+        </div>
+        </div>
+    </div>
+
+
+                `)
+
+            })
+
+        } catch (error) {
+            alert(error)
+        }
+
+
+
+
+    }
+</script> --}}
+
+
+{{-- <script>
+
+    getList();
+
+
+    async function getList() {
+
+
+        //showLoader();
+        let res=await axios.get("/list-front-category");
+        //let res=await axios.get("/frontcategoryData");
+        //hideLoader();
+
+        let tableList=$("#client-list");
+        //let tableData=$("#tableData");
+
+
+
+        res.data.forEach(function (item,index) {
+            let row=`<div class = "col-md-4">
+
+                        <div>${item['cat']}</div>
+                        <div><img class="w-15 h-auto" alt="" src="${item['image']}"></div>
+
+                     </div>`
+            tableList.append(row)
+        })
 
 
 
 
 
+    }
 
 
+</script> --}}
 
 
+{{-- <script>
+    getHero();
+    async function getHero() {
 
+        try {
+            let URL="/frontcategoryData"
 
+            document.getElementById('loading-div').classList.remove('d-none');
+            document.getElementById('content-div').classList.add('d-none');
 
+            debugger;
+
+            let response = await axios.get(URL);
+            document.getElementById('cat').innerHTML=response.data['cat'];
+            //document.getElementById('short_title').innerHTML=response.data['short_title'];
+            //document.getElementById('title').innerHTML=response.data['title'];
+            //document.getElementById('profileImg').src=response.data['img'];
+        }
+        catch (e) {
+            alert(e);
+        }
+
+    }
+
+</script> --}} -->

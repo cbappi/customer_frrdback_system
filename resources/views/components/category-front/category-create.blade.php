@@ -12,6 +12,11 @@
                                 <label class="form-label">Category Name *</label>
                                 <input type="text" class="form-control" id="categoryName">
                             </div>
+
+                            <div class="col-12 p-1">
+                                <label class="form-label">Category image *</label>
+                                <input type="text" class="form-control" id="categoryImage">
+                            </div>
                         </div>
                     </div>
                     </form>
@@ -28,13 +33,18 @@
 <script>
     async function Save() {
         let categoryName = document.getElementById('categoryName').value;
+        let categoryImage = document.getElementById('categoryImage').value;
+
         if (categoryName.length === 0) {
             errorToast("Category Required !")
+        }
+        else if (categoryImage.length === 0) {
+            errorToast("Category image Required !")
         }
         else {
             document.getElementById('modal-close').click();
             showLoader();
-            let res = await axios.post("/create-category",{name:categoryName})
+            let res = await axios.post("/create-front-category",{cat:categoryName, image:categoryImage})
             hideLoader();
             if(res.status===201){
                 successToast('Request completed');

@@ -39,7 +39,9 @@ Route::get('/adminLogin',[AdminUserController::class,'AdminLoginPage']);
 Route::post('/admin-login',[AdminUserController::class,'AdminLogin']);
 Route::get('/dashboard-admin',[AdminDashboardController::class,'AdminDashboardPage'])->middleware([AdminTokenVerificationMiddleware::class]);
 Route::get('/frontcategoryPage',[FrontCategoryController::class,'FrontCategoryPage']);
+Route::get('/frontcategoryData',[FrontCategoryController::class,'FrontcategoryData']);
 Route::get("/list-front-category",[FrontCategoryController::class,'FrontCategoryList']);
+Route::post("/create-front-category",[FrontCategoryController::class,'FrontCategoryCreate']);
 
 
 // Page Routes
