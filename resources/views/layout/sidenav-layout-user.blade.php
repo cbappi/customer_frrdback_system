@@ -41,6 +41,7 @@
 <nav class="navbar fixed-top px-0 shadow-sm bg-white">
     <div class="container-fluid">
 
+
         <a class="navbar-brand" href="#">
             <span class="icon-nav m-0 h5" onclick="MenuBarClickHandler()">
                 <img class="nav-logo-sm mx-2"  src="{{asset('images/menu.svg')}}" alt="logo"/>
@@ -72,40 +73,47 @@
 
 <div id="sideNavRef" class="side-nav-open">
 
-    <a href="{{url("/dashboard")}}" class="side-bar-item">
-        <i class="bi bi-graph-up"></i>
-        <span class="side-bar-item-caption">Dashboard</span>
-    </a>
+    <ul class="menu-inner py-1">
+        <li class="menu-item">
+            <a href="{{url("/dashboard")}}" class="side-bar-item menu-link menu-toggle">
+                <i class="bi bi-graph-up"></i>
+                <span class="side-bar-item-caption">Dashboard</span>
+            </a>
 
-    <a href="{{url("/customerPage")}}" class="side-bar-item">
-        <i class="bi bi-people"></i>
-        <span class="side-bar-item-caption">Customer</span>
-    </a>
+            <a href="{{url("/hotelinfoPage")}}" class="side-bar-item">
+                <i class="bi bi-bag"></i>Hotel Info</span>
+            </a>
 
-    <a href="{{url("/categoryPage")}}" class="side-bar-item">
-        <i class="bi bi-list-nested"></i>
-        <span class="side-bar-item-caption">Category</span>
-    </a>
+        </li>
 
-    <a href="{{url("/productPage")}}" class="side-bar-item">
-        <i class="bi bi-bag"></i>
-        <span class="side-bar-item-caption">Product</span>
-    </a>
 
-    <a href="{{url('/salePage')}}" class="side-bar-item">
-        <i class="bi bi-currency-dollar"></i>
-        <span class="side-bar-item-caption">Create Sale</span>
-    </a>
 
-    <a href="{{url('/invoicePage')}}" class="side-bar-item">
-        <i class="bi bi-receipt"></i>
-        <span class="side-bar-item-caption">Invoice</span>
-    </a>
 
-    <a href="{{url('/reportPage')}}" class="side-bar-item">
-        <i class="bi bi-file-earmark-bar-graph"></i>
-        <span class="side-bar-item-caption">Report</span>
-    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </ul>
 
 
 </div>

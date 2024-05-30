@@ -15,10 +15,13 @@ use App\Http\Controllers\ElementsController;
 use App\Http\Controllers\LearnersController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HotelInfoController;
 use App\Http\Controllers\FrontCategoryController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Middleware\TokenVerificationMiddleware;
 use App\Http\Middleware\AdminTokenVerificationMiddleware;
+use App\Http\Controllers\Admin\HotelSubcategoryController;
+use App\Http\Controllers\Admin\ResturentCategoryController;
 
 
 // Web API Routes
@@ -34,7 +37,7 @@ Route::post('/user-update',[UserController::class,'UpdateProfile'])->middleware(
 // User Logout
 Route::get('/logout',[UserController::class,'UserLogout']);
 
-//Admin Panel
+//Admin Panel === Feedback System
 Route::get('/adminLogin',[AdminUserController::class,'AdminLoginPage']);
 Route::post('/admin-login',[AdminUserController::class,'AdminLogin']);
 Route::get('/dashboard-admin',[AdminDashboardController::class,'AdminDashboardPage'])->middleware([AdminTokenVerificationMiddleware::class]);
@@ -42,6 +45,43 @@ Route::get('/frontcategoryPage',[FrontCategoryController::class,'FrontCategoryPa
 Route::get('/frontcategoryData',[FrontCategoryController::class,'FrontcategoryData']);
 Route::get("/list-front-category",[FrontCategoryController::class,'FrontCategoryList']);
 Route::post("/create-front-category",[FrontCategoryController::class,'FrontCategoryCreate']);
+
+//HOTEL INFO
+
+Route::get('/hotelinfoPage',[HotelInfoController::class,'HotelInfoPage']);
+Route::get('/list-hotel-info',[HotelInfoController::class,'HotelInfoList']);
+
+
+//Hotel Sub Category
+Route::get('/hotelsubcategoryadminPage',[HotelSubcategoryController::class,'HotelSubCategoryAdminPage']);
+Route::get('/list-hotel-sub-category',[HotelSubcategoryController::class,'HotelSubCategoryAdminList']);
+Route::post("/create-hotel-sub-category",[HotelSubcategoryController::class,'HotelSubCategoryAdminCreate']);
+Route::post("/delete-hotel-sub-category",[HotelSubcategoryController::class,'HotelSubCategoryAdminDelete']);
+
+Route::post("/update-hotel-sub-category",[HotelSubcategoryController::class,'HotelSubCatUpdate']);
+Route::post("/sub-category-hotel-by-id",[HotelSubcategoryController::class,'HotelSubCatByID']);
+
+//RESTURENT SUB CATEGORY
+
+Route::get('/resturentsubcategoryadminPage',[ResturentCategoryController::class,'ResturentSubCategoryAdminPage']);
+Route::get('/list-resturent-sub-category',[ResturentCategoryController::class,'ResturentSubCategoryAdminList']);
+Route::post("/create-resturent-sub-category",[ResturentCategoryController::class,'ResturentSubCategoryAdminCreate']);
+Route::post("/delete-resturent-sub-category",[ResturentCategoryController::class,'ResturentSubCategoryAdminDelete']);
+
+Route::post("/update-resturent-sub-category",[ResturentCategoryController::class,'ResturentSubCatUpdate']);
+Route::post("/sub-category-resturent-by-id",[ResturentCategoryController::class,'ResturentSubCatByID']);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Page Routes

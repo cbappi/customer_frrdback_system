@@ -129,9 +129,30 @@
             </a>
 
             <a href="{{url("/frontcategoryPage")}}" class="side-bar-item">
-                <i class="bi bi-list-nested"></i>
+                <i class="bi bi-file-earmark-bar-graph"></i>
                 <span class="side-bar-item-caption">Front Category</span>
             </a>
+
+            <a href="{{url("/hotelinfoPage")}}" class="side-bar-item">
+                <i class="bi bi-bag"></i>Hotel Info</span>
+            </a>
+
+            <a href="{{url("/hotelsubcategoryadminPage")}}" class="side-bar-item">
+                <i class="bi bi-list-nested"></i>
+                <span class="side-bar-item-caption">Hotel Sub Category</span>
+            </a>
+
+
+
+
+
+
+            <a href="{{url("/resturentsubcategoryadminPage")}}" class="side-bar-item">
+                <i class="bi bi-receipt"></i>
+                <span class="side-bar-item-caption">Resturent Sub Category</span>
+            </a>
+
+
 
             <a href="{{url('/elementPage')}}" class="side-bar-item">
                 <i class="bi bi-file-earmark-bar-graph"></i>
