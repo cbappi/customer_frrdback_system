@@ -17,8 +17,10 @@ use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HotelInfoController;
 use App\Http\Controllers\FrontCategoryController;
+use App\Http\Controllers\ResturentInfoController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Middleware\TokenVerificationMiddleware;
+use App\Http\Controllers\Admin\ResturentReviewController;
 use App\Http\Middleware\AdminTokenVerificationMiddleware;
 use App\Http\Controllers\Admin\HotelSubcategoryController;
 use App\Http\Controllers\Admin\ResturentCategoryController;
@@ -41,6 +43,7 @@ Route::get('/logout',[UserController::class,'UserLogout']);
 Route::get('/adminLogin',[AdminUserController::class,'AdminLoginPage']);
 Route::post('/admin-login',[AdminUserController::class,'AdminLogin']);
 Route::get('/dashboard-admin',[AdminDashboardController::class,'AdminDashboardPage'])->middleware([AdminTokenVerificationMiddleware::class]);
+Route::get('/dashboard-user',[DashboardController::class,'DashboardPage']);
 Route::get('/frontcategoryPage',[FrontCategoryController::class,'FrontCategoryPage']);
 Route::get('/frontcategoryData',[FrontCategoryController::class,'FrontcategoryData']);
 Route::get("/list-front-category",[FrontCategoryController::class,'FrontCategoryList']);
@@ -49,7 +52,26 @@ Route::post("/create-front-category",[FrontCategoryController::class,'FrontCateg
 //HOTEL INFO
 
 Route::get('/hotelinfoPage',[HotelInfoController::class,'HotelInfoPage']);
+//Route::get('/list-hotel-info',[HotelInfoController::class,'HotelInfoList']);
 Route::get('/list-hotel-info',[HotelInfoController::class,'HotelInfoList']);
+
+
+//RESTURENT INFO
+
+Route::get('/resturentinfoPage',[ResturentInfoController::class,'ResturentInfoPage'])->middleware([TokenVerificationMiddleware::class]);
+//Route::get('/list-hotel-info',[HotelInfoController::class,'HotelInfoList']);
+Route::get('/list-resturent-info',[ResturentInfoController::class,'ResturentInfoList'])->middleware([TokenVerificationMiddleware::class]);
+Route::post('/create-resturent-info',[ResturentInfoController::class,'ResturentInfoCreate'])->middleware([TokenVerificationMiddleware::class]);
+
+//RESTURENT REVIEW
+
+Route::get('/resturentreviewPage',[ResturentReviewController::class,'ResturentReviewPage']);
+
+Route::get('/list-resturent-info', [ResturentReviewController::class, 'ResturentInfoList']);
+
+
+Route::get('/list-resturent-review',[ResturentReviewController::class,'ResturentReviewList']);
+Route::post('/create-resturent-review',[ResturentReviewController::class,'ResturentReviewCreate']);
 
 
 //Hotel Sub Category

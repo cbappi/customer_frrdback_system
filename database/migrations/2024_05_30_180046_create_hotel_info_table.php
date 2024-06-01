@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('hotel_info', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('hotel_subcategory_id');
+            $table->foreign('hotel_subcategory_id')->references('id')->on('hotel_subcategories')
+                ->cascadeOnUpdate()->restrictOnDelete();
             $table->foreign('user_id')->references('id')->on('users')
                 ->cascadeOnUpdate()->restrictOnDelete();
             $table->string('hotel_name',50);
@@ -38,6 +41,7 @@ return new class extends Migration
             $table->string('image_four',150);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
+
         });
     }
 

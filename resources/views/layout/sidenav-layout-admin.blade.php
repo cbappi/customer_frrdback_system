@@ -74,68 +74,23 @@
 <div id="sideNavRef" class="side-nav-open">
 
     <ul class="menu-inner py-1">
-        <li class="menu-item">
+
             <a href="{{url("/dashboard")}}" class="side-bar-item menu-link menu-toggle">
                 <i class="bi bi-graph-up"></i>
                 <span class="side-bar-item-caption">Dashboard</span>
             </a>
-            <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="{{url("/categoryPage")}}" class="menu-link">
-                        <div data-i18n="Account">List</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="{{url("/customerPage")}}" class="menu-link">
-                        <div data-i18n="Notifications">Create</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-            <a href="{{url("/customerPage")}}" class="side-bar-item">
-                <i class="bi bi-people"></i>
-                <span class="side-bar-item-caption">Customer</span>
-            </a>
-
-            <a href="{{url("/categoryPage")}}" class="side-bar-item">
-                <i class="bi bi-list-nested"></i>
-                <span class="side-bar-item-caption">Category</span>
-            </a>
-
-            <a href="{{url("/productPage")}}" class="side-bar-item">
-                <i class="bi bi-bag"></i>
-                <span class="side-bar-item-caption">Product</span>
-            </a>
-
-            <a href="{{url('/salePage')}}" class="side-bar-item">
-                <i class="bi bi-currency-dollar"></i>
-                <span class="side-bar-item-caption">Create Sale</span>
-            </a>
 
 
-            <a href="{{url('/costPage')}}" class="side-bar-item">
-                <i class="bi bi-currency-dollar"></i>
-                <span class="side-bar-item-caption">Create Cost</span>
-            </a>
 
-            <a href="{{url('/invoicePage')}}" class="side-bar-item">
-                <i class="bi bi-receipt"></i>
-                <span class="side-bar-item-caption">Invoice</span>
-            </a>
-
-            <a href="{{url('/reportPage')}}" class="side-bar-item">
-                <i class="bi bi-file-earmark-bar-graph"></i>
-                <span class="side-bar-item-caption">Report</span>
-            </a>
 
             <a href="{{url("/frontcategoryPage")}}" class="side-bar-item">
                 <i class="bi bi-file-earmark-bar-graph"></i>
                 <span class="side-bar-item-caption">Front Category</span>
             </a>
 
-            <a href="{{url("/hotelinfoPage")}}" class="side-bar-item">
-                <i class="bi bi-bag"></i>Hotel Info</span>
-            </a>
+           
+
+
 
             <a href="{{url("/hotelsubcategoryadminPage")}}" class="side-bar-item">
                 <i class="bi bi-list-nested"></i>
@@ -153,15 +108,9 @@
             </a>
 
 
-
-            <a href="{{url('/elementPage')}}" class="side-bar-item">
+            <a href="{{url('/resturentreviewPage')}}" class="side-bar-item">
                 <i class="bi bi-file-earmark-bar-graph"></i>
-                <span class="side-bar-item-caption">Accrssories</span>
-            </a>
-
-            <a href="{{url('/fabricPage')}}" class="side-bar-item">
-                <i class="bi bi-file-earmark-bar-graph"></i>
-                <span class="side-bar-item-caption">Fabrics</span>
+                <span class="side-bar-item-caption">Resturent Review</span>
             </a>
     </ul>
 

@@ -84,6 +84,10 @@
                 <i class="bi bi-bag"></i>Hotel Info</span>
             </a>
 
+            <a href="{{url("/resturentinfoPage")}}" class="side-bar-item">
+                <i class="bi bi-bag"></i>Resturent Info</span>
+            </a>
+
         </li>
 
 

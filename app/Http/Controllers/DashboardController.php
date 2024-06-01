@@ -11,7 +11,7 @@ use Illuminate\View\View;
 class DashboardController extends Controller
 {
     function DashboardPage():View{
-        return view('pages.dashboard.dashboard-page');
+        return view('pages.dashboard-user.dashboard-page');
     }
 
     function Summary(Request $request):array{

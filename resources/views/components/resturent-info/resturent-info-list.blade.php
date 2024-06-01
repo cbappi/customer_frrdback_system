@@ -1,16 +1,4 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
-  </body>
-</html>
+
 
 
 
@@ -24,7 +12,7 @@
             <div class="card px-5 py-5">
                 <div class="row justify-content-between ">
                     <div class="align-items-center col">
-                        <h4>Hotel Info</h4>
+                        <h4>Resturent Info</h4>
                     </div>
                     <div class="align-items-center col">
                         <button data-bs-toggle="modal" data-bs-target="#create-modal" class="float-end btn m-0 bg-gradient-primary">Create</button>
@@ -69,7 +57,7 @@
 
 <script>
 async function getList() {
-    let res = await axios.get("/list-hotel-info");
+    let res = await axios.get("/list-resturent-info");
 
     let tableList = $("#tableList");
     let tableData = $("#tableData");
@@ -78,29 +66,36 @@ async function getList() {
     tableList.empty();
 
     res.data.forEach(function (item, index) {
+        //let categoryName = categoryMap[item['resturent_category_id']];
         let row = `<tr>
             <td>${index + 1}</td>
-            <td>${item.user ? item.user.firstName + ' ' + item.user.lastName : ''}</td>
-            <td>${item.hotel_subcategory ? item.hotel_subcategory.sub_cat_name : ''}</td>
-            <td>${item.hotel_name}</td>
-            <td>${item.hotel_description}</td>
-            <td>${item.hotel_amenities}</td>
-            <td>${item.hotel_type}</td>
-            <td>${item.room_feature}</td>
-            <td>${item.room_type}</td>
-            <td>${item.start_room_price}</td>
-            <td>${item.last_room_price}</td>
+
+            <td>${item.user_id}</td>
+            
+            <td>${item.category ? item.category.name : 'N/A'}</td>
+
+            <td>${item.resturent_name}</td>
+            <td>${item.resturent_description}</td>
+            <td>${item.features}</td>
+            <td>${item.cuisines}</td>
+            <td>${item.special_diets}</td>
+            <td>${item.meals}</td>
             <td>${item.discount}</td>
-            <td>${item.country}</td>
-            <td>${item.district}</td>
-            <td>${item.address}</td>
+            <td>${item.price_range_start}</td>
+            <td>${item.price_range_last}</td>
+            <td>${item.open_time}</td>
+            <td>${item.close_time}</td>
+            <td>${item.	address}</td>
             <td>${item.website}</td>
             <td>${item.email}</td>
             <td>${item.phone}</td>
-            <td><img class="w-15 h-auto" alt="" src="${item.image_one}"></td>
-            <td><img class="w-15 h-auto" alt="" src="${item.image_two}"></td>
-            <td><img class="w-15 h-auto" alt="" src="${item.image_three}"></td>
-            <td><img class="w-15 h-auto" alt="" src="${item.image_four}"></td>
+
+
+
+            <td><img class="w-60 h-auto" alt="" src="${item.image_one}"></td>
+            <td><img class="w-60 h-auto" alt="" src="${item.image_two}"></td>
+            <td><img class="w-60 h-auto" alt="" src="${item.image_three}"></td>
+            <td><img class="w-60 h-auto" alt="" src="${item.image_four}"></td>
             <td>
                 <button data-id="${item.id}" class="btn editBtn btn-sm btn-outline-success">Edit</button>
                 <button data-id="${item.id}" class="btn deleteBtn btn-sm btn-outline-danger">Delete</button>
