@@ -8,10 +8,10 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-class DashboardController extends Controller
+class UserDashboardController extends Controller
 {
-    function DashboardPage():View{
-        return view('pages.dashboard-user.dashboard-page');
+    function UserDashboardPage():View{
+        return view('pages.dashboard-user.dashboard-page-user');
     }
 
     function Summary(Request $request):array{

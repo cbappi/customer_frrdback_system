@@ -46,7 +46,7 @@
             <span class="icon-nav m-0 h5" onclick="MenuBarClickHandler()">
                 <img class="nav-logo-sm mx-2"  src="{{asset('images/menu.svg')}}" alt="logo"/>
             </span>
-            <img class="nav-logo  mx-2"  src="{{asset('images/logo.png')}}" alt="logo"/>
+            <img class="nav-logo  mx-2"  src="{{asset('images/customer_review-removebg-preview.png')}}" alt="logo"  style="width: 250px; height: 70px;/>
         </a>
 
         <div class="float-right h-auto d-flex">
@@ -75,9 +75,9 @@
 
     <ul class="menu-inner py-1">
         <li class="menu-item">
-            <a href="{{url("/dashboard")}}" class="side-bar-item menu-link menu-toggle">
+            <a href="{{url("/dashboard-user")}}" class="side-bar-item menu-link menu-toggle">
                 <i class="bi bi-graph-up"></i>
-                <span class="side-bar-item-caption">Dashboard</span>
+                <span class="side-bar-item-caption">Dashboard User</span>
             </a>
 
             <a href="{{url("/hotelinfoPage")}}" class="side-bar-item">

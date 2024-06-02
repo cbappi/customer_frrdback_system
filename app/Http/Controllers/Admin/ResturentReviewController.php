@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Models\ResturentReview;
+use App\Models\ResturentCategory;
 use App\Models\ResturentInfo;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -23,6 +24,11 @@ class ResturentReviewController extends Controller
     public function ResturentInfoList()
     {
         return ResturentInfo::all();
+    }
+
+    public function ResturentCategory()
+    {
+        return ResturentCategory::all();
     }
 
     function ResturentReviewCreate(Request $request){

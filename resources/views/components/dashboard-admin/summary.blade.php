@@ -1,8 +1,10 @@
 <div class="container-fluid">
     <div class="row">
 
+        <h5>Dashboard Admin</h5>
+
         <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 animated fadeIn p-2">
-            <div class="card card-plain h-100 bg-white">
+            <div class="card card-plain h-100 bg-warning">
                 <div class="p-3">
                     <div class="row">
                         <div class="col-9 col-lg-8 col-md-8 col-sm-9">
@@ -10,7 +12,7 @@
                                 <h5 class="mb-0 text-capitalize font-weight-bold">
                                     <span id="product"></span>
                                 </h5>
-                                <p class="mb-0 text-sm">Product</p>
+                                <p class="mb-0 text-sm">Hotel Info</p>
                             </div>
                         </div>
                         <div class="col-3 col-lg-4 col-md-4 col-sm-3 text-end">
@@ -24,7 +26,7 @@
         </div>
 
         <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 animated fadeIn p-2">
-            <div class="card card-plain h-100 bg-white">
+            <div class="card card-plain h-100 bg-warning">
                 <div class="p-3">
                     <div class="row">
                         <div class="col-9 col-lg-8 col-md-8 col-sm-9">
@@ -32,7 +34,7 @@
                                 <h5 class="mb-0 text-capitalize font-weight-bold">
                                     <span id="category"></span>
                                 </h5>
-                                <p class="mb-0 text-sm">Category</p>
+                                <p class="mb-0 text-sm">Resturent Info</p>
                             </div>
                         </div>
                         <div class="col-3 col-lg-4 col-md-4 col-sm-3 text-end">
@@ -46,7 +48,7 @@
         </div>
 
         <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 animated fadeIn p-2">
-            <div class="card card-plain h-100 bg-white">
+            <div class="card card-plain h-100 bg-warning">
                 <div class="p-3">
                     <div class="row">
                         <div class="col-9 col-lg-8 col-md-8 col-sm-9">
@@ -54,7 +56,7 @@
                                 <h5 class="mb-0 text-capitalize font-weight-bold">
                                     <span id="customer"></span>
                                 </h5>
-                                <p class="mb-0 text-sm">Customer</p>
+                                <p class="mb-0 text-sm">Hotel Review</p>
                             </div>
                         </div>
                         <div class="col-3 col-lg-4 col-md-4 col-sm-3 text-end">
@@ -68,7 +70,7 @@
         </div>
 
         <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 animated fadeIn p-2">
-            <div class="card card-plain h-100  bg-white">
+            <div class="card card-plain h-100  bg-warning">
                 <div class="p-3">
                     <div class="row">
                         <div class="col-9 col-lg-8 col-md-8 col-sm-9">
@@ -76,7 +78,7 @@
                                 <h5 class="mb-0 text-capitalize font-weight-bold">
                                     <span id="invoice"></span>
                                 </h5>
-                                <p class="mb-0 text-sm">Invoice</p>
+                                <p class="mb-0 text-sm">Resturent Review</p>
                             </div>
                         </div>
                         <div class="col-3 col-lg-4 col-md-4 col-sm-3 text-end">
@@ -91,15 +93,15 @@
 
 
         <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 animated fadeIn p-2">
-            <div class="card card-plain h-100 bg-white">
+            <div class="card card-plain h-100 bg-warning">
                 <div class="p-3">
                     <div class="row">
                         <div class="col-9 col-lg-8 col-md-8 col-sm-9">
                             <div>
                                 <h5 class="mb-0 text-capitalize font-weight-bold">
-                                    $ <span id="total"></span>
+                                     <span id="total"></span>
                                 </h5>
-                                <p class="mb-0 text-sm">Total Sale</p>
+                                <p class="mb-0 text-sm">Book Info</p>
                             </div>
                         </div>
                         <div class="col-3 col-lg-4 col-md-4 col-sm-3 text-end">
@@ -114,15 +116,16 @@
 
 
         <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 animated fadeIn p-2">
-            <div class="card card-plain h-100  bg-white">
+            <div class="card card-plain h-100  bg-warning">
                 <div class="p-3">
                     <div class="row">
                         <div class="col-9 col-lg-8 col-md-8 col-sm-9">
                             <div>
                                 <h5 class="mb-0 text-capitalize font-weight-bold">
-                                    $ <span id="vat"></span>
+                                     <span id="vat"></span>
                                 </h5>
-                                <p class="mb-0 text-sm">Vat Collection</p>
+
+                                <p class="mb-0 text-sm">Book Review</p>
                             </div>
                         </div>
                         <div class="col-3 col-lg-4 col-md-4 col-sm-3 text-end">
@@ -137,15 +140,15 @@
 
 
         <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 animated fadeIn p-2">
-            <div class="card card-plain h-100  bg-white">
+            <div class="card card-plain h-100  bg-warning">
                 <div class="p-3">
                     <div class="row">
                         <div class="col-9 col-lg-8 col-md-8 col-sm-9">
                             <div>
                                 <h5 class="mb-0 text-capitalize font-weight-bold">
-                                    $ <span id="payable"></span>
+                                     <span id="payable"></span>
                                 </h5>
-                                <p class="mb-0 text-sm">Total Collection</p>
+                                <p class="mb-0 text-sm">Course Info</p>
                             </div>
                         </div>
                         <div class="col-3 col-lg-4 col-md-4 col-sm-3 text-end">

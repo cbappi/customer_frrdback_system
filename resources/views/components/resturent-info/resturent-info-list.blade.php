@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12 col-sm-12 col-lg-12">
@@ -56,6 +48,7 @@
 </div>
 
 <script>
+
 async function getList() {
     let res = await axios.get("/list-resturent-info");
 
@@ -66,14 +59,10 @@ async function getList() {
     tableList.empty();
 
     res.data.forEach(function (item, index) {
-        //let categoryName = categoryMap[item['resturent_category_id']];
         let row = `<tr>
             <td>${index + 1}</td>
-
             <td>${item.user_id}</td>
-            
-            <td>${item.category ? item.category.name : 'N/A'}</td>
-
+            <td>${item.cat ? item.cat.name : 'N/A'}</td>
             <td>${item.resturent_name}</td>
             <td>${item.resturent_description}</td>
             <td>${item.features}</td>
@@ -85,13 +74,10 @@ async function getList() {
             <td>${item.price_range_last}</td>
             <td>${item.open_time}</td>
             <td>${item.close_time}</td>
-            <td>${item.	address}</td>
+            <td>${item.address}</td>
             <td>${item.website}</td>
             <td>${item.email}</td>
             <td>${item.phone}</td>
-
-
-
             <td><img class="w-60 h-auto" alt="" src="${item.image_one}"></td>
             <td><img class="w-60 h-auto" alt="" src="${item.image_two}"></td>
             <td><img class="w-60 h-auto" alt="" src="${item.image_three}"></td>
@@ -123,4 +109,9 @@ async function getList() {
 }
 
 getList();
+
+
+
+
+
 </script>

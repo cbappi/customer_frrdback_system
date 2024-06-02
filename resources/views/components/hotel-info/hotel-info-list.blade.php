@@ -1,16 +1,4 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
-  </body>
-</html>
+
 
 
 
@@ -57,6 +45,7 @@
                         <th>Image-3</th>
                         <th>Image-4</th>
                         <th>Action</th>
+
                     </tr>
                     </thead>
                     <tbody id="tableList">
@@ -78,10 +67,14 @@ async function getList() {
     tableList.empty();
 
     res.data.forEach(function (item, index) {
+        //let categoryName = categoryMap[item['resturent_category_id']];
         let row = `<tr>
             <td>${index + 1}</td>
+
+
             <td>${item.user ? item.user.firstName + ' ' + item.user.lastName : ''}</td>
-            <td>${item.hotel_subcategory ? item.hotel_subcategory.sub_cat_name : ''}</td>
+            <td>${item.subcategory ? item.subcategory.sub_cat_name : 'N/A'}</td>
+
             <td>${item.hotel_name}</td>
             <td>${item.hotel_description}</td>
             <td>${item.hotel_amenities}</td>
@@ -101,6 +94,7 @@ async function getList() {
             <td><img class="w-15 h-auto" alt="" src="${item.image_two}"></td>
             <td><img class="w-15 h-auto" alt="" src="${item.image_three}"></td>
             <td><img class="w-15 h-auto" alt="" src="${item.image_four}"></td>
+
             <td>
                 <button data-id="${item.id}" class="btn editBtn btn-sm btn-outline-success">Edit</button>
                 <button data-id="${item.id}" class="btn deleteBtn btn-sm btn-outline-danger">Delete</button>

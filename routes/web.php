@@ -3,21 +3,19 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\SheetController;
-use App\Http\Controllers\ReportController;
-use App\Http\Controllers\FabricsController;
-use App\Http\Controllers\InvoiceController;
-use App\Http\Controllers\ProductController;
+
+
+
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\CostingsController;
+
 use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\ElementsController;
-use App\Http\Controllers\LearnersController;
+
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HotelInfoController;
 use App\Http\Controllers\FrontCategoryController;
 use App\Http\Controllers\ResturentInfoController;
+use App\Http\Controllers\UserDashboardController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Middleware\TokenVerificationMiddleware;
 use App\Http\Controllers\Admin\ResturentReviewController;
@@ -43,7 +41,7 @@ Route::get('/logout',[UserController::class,'UserLogout']);
 Route::get('/adminLogin',[AdminUserController::class,'AdminLoginPage']);
 Route::post('/admin-login',[AdminUserController::class,'AdminLogin']);
 Route::get('/dashboard-admin',[AdminDashboardController::class,'AdminDashboardPage'])->middleware([AdminTokenVerificationMiddleware::class]);
-Route::get('/dashboard-user',[DashboardController::class,'DashboardPage']);
+Route::get('/dashboard-user',[UserDashboardController::class,'UserDashboardPage']);
 Route::get('/frontcategoryPage',[FrontCategoryController::class,'FrontCategoryPage']);
 Route::get('/frontcategoryData',[FrontCategoryController::class,'FrontcategoryData']);
 Route::get("/list-front-category",[FrontCategoryController::class,'FrontCategoryList']);
@@ -54,6 +52,20 @@ Route::post("/create-front-category",[FrontCategoryController::class,'FrontCateg
 Route::get('/hotelinfoPage',[HotelInfoController::class,'HotelInfoPage']);
 //Route::get('/list-hotel-info',[HotelInfoController::class,'HotelInfoList']);
 Route::get('/list-hotel-info',[HotelInfoController::class,'HotelInfoList']);
+Route::post('/create-hotel-info',[HotelInfoController::class,'HotelInfoCreate'])->middleware([TokenVerificationMiddleware::class]);;
+Route::get('/list-hotel-subcategory',[HotelInfoController::class,'HotelSubCategory'])->middleware([TokenVerificationMiddleware::class]);;
+
+//RESTURENT SUB CATEGORY
+
+Route::get('/resturentsubcategoryadminPage',[ResturentCategoryController::class,'ResturentSubCategoryAdminPage']);
+Route::get('/list-resturent-sub-category',[ResturentCategoryController::class,'ResturentSubCategoryAdminList']);
+Route::post("/create-resturent-sub-category",[ResturentCategoryController::class,'ResturentSubCategoryAdminCreate']);
+Route::post("/delete-resturent-sub-category",[ResturentCategoryController::class,'ResturentSubCategoryAdminDelete']);
+
+Route::post("/update-resturent-sub-category",[ResturentCategoryController::class,'ResturentSubCatUpdate']);
+Route::post("/sub-category-resturent-by-id",[ResturentCategoryController::class,'ResturentSubCatByID']);
+
+
 
 
 //RESTURENT INFO
@@ -62,6 +74,9 @@ Route::get('/resturentinfoPage',[ResturentInfoController::class,'ResturentInfoPa
 //Route::get('/list-hotel-info',[HotelInfoController::class,'HotelInfoList']);
 Route::get('/list-resturent-info',[ResturentInfoController::class,'ResturentInfoList'])->middleware([TokenVerificationMiddleware::class]);
 Route::post('/create-resturent-info',[ResturentInfoController::class,'ResturentInfoCreate'])->middleware([TokenVerificationMiddleware::class]);
+
+
+Route::get('/list-resturent-cat', [ResturentInfoController::class, 'ResturentCatList'])->middleware([TokenVerificationMiddleware::class]);;
 
 //RESTURENT REVIEW
 
@@ -73,6 +88,8 @@ Route::get('/list-resturent-info', [ResturentReviewController::class, 'Resturent
 Route::get('/list-resturent-review',[ResturentReviewController::class,'ResturentReviewList']);
 Route::post('/create-resturent-review',[ResturentReviewController::class,'ResturentReviewCreate']);
 
+Route::get('/list-resturent-category',[ResturentReviewController::class,'ResturentCategory']);
+
 
 //Hotel Sub Category
 Route::get('/hotelsubcategoryadminPage',[HotelSubcategoryController::class,'HotelSubCategoryAdminPage']);
@@ -83,15 +100,7 @@ Route::post("/delete-hotel-sub-category",[HotelSubcategoryController::class,'Hot
 Route::post("/update-hotel-sub-category",[HotelSubcategoryController::class,'HotelSubCatUpdate']);
 Route::post("/sub-category-hotel-by-id",[HotelSubcategoryController::class,'HotelSubCatByID']);
 
-//RESTURENT SUB CATEGORY
 
-Route::get('/resturentsubcategoryadminPage',[ResturentCategoryController::class,'ResturentSubCategoryAdminPage']);
-Route::get('/list-resturent-sub-category',[ResturentCategoryController::class,'ResturentSubCategoryAdminList']);
-Route::post("/create-resturent-sub-category",[ResturentCategoryController::class,'ResturentSubCategoryAdminCreate']);
-Route::post("/delete-resturent-sub-category",[ResturentCategoryController::class,'ResturentSubCategoryAdminDelete']);
-
-Route::post("/update-resturent-sub-category",[ResturentCategoryController::class,'ResturentSubCatUpdate']);
-Route::post("/sub-category-resturent-by-id",[ResturentCategoryController::class,'ResturentSubCatByID']);
 
 
 
@@ -113,21 +122,16 @@ Route::get('/userRegistration',[UserController::class,'RegistrationPage']);
 Route::get('/sendOtp',[UserController::class,'SendOtpPage']);
 Route::get('/verifyOtp',[UserController::class,'VerifyOTPPage']);
 Route::get('/resetPassword',[UserController::class,'ResetPasswordPage'])->middleware([TokenVerificationMiddleware::class]);
-Route::get('/dashboard',[DashboardController::class,'DashboardPage'])->middleware([TokenVerificationMiddleware::class]);
+//Route::get('/dashboard',[DashboardController::class,'DashboardPage'])->middleware([TokenVerificationMiddleware::class]);
 Route::get('/userProfile',[UserController::class,'ProfilePage'])->middleware([TokenVerificationMiddleware::class]);
 Route::get('/categoryPage',[CategoryController::class,'CategoryPage']);
-Route::get('/customerPage',[CustomerController::class,'CustomerPage'])->middleware([TokenVerificationMiddleware::class]);
-Route::get('/productPage',[ProductController::class,'ProductPage'])->middleware([TokenVerificationMiddleware::class]);
-Route::get('/invoicePage',[InvoiceController::class,'InvoicePage'])->middleware([TokenVerificationMiddleware::class]);
 
 
-Route::get('/sheetPage',[SheetController::class,'SheetPage'])->middleware([TokenVerificationMiddleware::class]);
-Route::get('/salePageSheet',[SheetController::class,'SalePage'])->middleware([TokenVerificationMiddleware::class]);
 
-Route::get('/salePage',[InvoiceController::class,'SalePage'])->middleware([TokenVerificationMiddleware::class]);
-Route::get('/reportPage',[ReportController::class,'ReportPage'])->middleware([TokenVerificationMiddleware::class]);
 
-Route::get('/costPage',[CostingsController::class,'CostPage'])->middleware([TokenVerificationMiddleware::class]);
+
+
+
 
 
 
@@ -135,63 +139,40 @@ Route::get('/costPage',[CostingsController::class,'CostPage'])->middleware([Toke
 
 
 // Category API
-Route::post("/create-category",[CategoryController::class,'CategoryCreate']);
-Route::get("/list-category",[CategoryController::class,'CategoryList']);
-Route::post("/delete-category",[CategoryController::class,'CategoryDelete']);
-Route::post("/update-category",[CategoryController::class,'CategoryUpdate']);
-Route::post("/category-by-id",[CategoryController::class,'CategoryByID']);
+
+
+
+
 
 
 // Customer API
-Route::post("/create-customer",[CustomerController::class,'CustomerCreate'])->middleware([TokenVerificationMiddleware::class]);
-Route::get("/list-customer",[CustomerController::class,'CustomerList'])->middleware([TokenVerificationMiddleware::class]);
-Route::post("/delete-customer",[CustomerController::class,'CustomerDelete'])->middleware([TokenVerificationMiddleware::class]);
-Route::post("/update-customer",[CustomerController::class,'CustomerUpdate'])->middleware([TokenVerificationMiddleware::class]);
-Route::post("/customer-by-id",[CustomerController::class,'CustomerByID'])->middleware([TokenVerificationMiddleware::class]);
+
+
+
 
 
 // Product API
-Route::post("/create-product",[ProductController::class,'CreateProduct'])->middleware([TokenVerificationMiddleware::class]);
-Route::post("/delete-product",[ProductController::class,'DeleteProduct'])->middleware([TokenVerificationMiddleware::class]);
-Route::post("/update-product",[ProductController::class,'UpdateProduct'])->middleware([TokenVerificationMiddleware::class]);
-Route::get("/list-product",[ProductController::class,'ProductList'])->middleware([TokenVerificationMiddleware::class]);
-Route::post("/product-by-id",[ProductController::class,'ProductByID'])->middleware([TokenVerificationMiddleware::class]);
 
 
 
-// Invoice
-Route::post("/invoice-create",[InvoiceController::class,'invoiceCreate'])->middleware([TokenVerificationMiddleware::class]);
-Route::get("/invoice-select",[InvoiceController::class,'invoiceSelect'])->middleware([TokenVerificationMiddleware::class]);
-Route::post("/invoice-details",[InvoiceController::class,'InvoiceDetails'])->middleware([TokenVerificationMiddleware::class]);
-Route::post("/invoice-delete",[InvoiceController::class,'invoiceDelete'])->middleware([TokenVerificationMiddleware::class]);
 
-//SHEET
 
-Route::post("/sheet-create",[SheetController::class,'sheetCreate'])->middleware([TokenVerificationMiddleware::class]);
+
+
+
 
 
 
 // SUMMARY & Report
-Route::get("/summary",[DashboardController::class,'Summary'])->middleware([TokenVerificationMiddleware::class]);
-Route::get("/sales-report/{FormDate}/{ToDate}",[ReportController::class,'SalesReport'])->middleware([TokenVerificationMiddleware::class]);
+Route::get("/summary",[UserDashboardController::class,'Summary'])->middleware([TokenVerificationMiddleware::class]);
 
 
-//LEARNER
-Route::get('/learnerPage',[LearnersController::class,'LearnerPage'])->middleware([TokenVerificationMiddleware::class]);
-Route::get('/list-learner',[LearnersController::class,'LearnerList'])->middleware([TokenVerificationMiddleware::class]);
+
 
 //ELEMENT
 
-Route::get('/elementPage',[ElementsController::class,'ElementPage'])->middleware([TokenVerificationMiddleware::class]);
-Route::get('/list-element',[ElementsController::class,'ElementList'])->middleware([TokenVerificationMiddleware::class]);
-Route::post('/create-element',[ElementsController::class,'ElementCreate'])->middleware([TokenVerificationMiddleware::class]);
 
 
-//FABRIC
-Route::get('/fabricPage',[FabricsController::class,'FabricPage'])->middleware([TokenVerificationMiddleware::class]);
-Route::get('/list-fabric',[FabricsController::class,'FabricList'])->middleware([TokenVerificationMiddleware::class]);
-([TokenVerificationMiddleware::class]);
-Route::post('/create-fabric',[FabricsController::class,'FabricCreate'])->middleware([TokenVerificationMiddleware::class]);
 
 //
 

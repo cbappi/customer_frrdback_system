@@ -1,4 +1,4 @@
-@extends('layout.sidenav-layout-admin')
+@extends('layout.sidenav-layout-user')
 @section('content')
     @include('components.hotel-info.hotel-info-list')
     @include('components.hotel-info.hotel-info-delete')

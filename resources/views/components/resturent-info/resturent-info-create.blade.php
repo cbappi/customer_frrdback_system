@@ -92,13 +92,14 @@
 
     FillCategoryDropDown();
 
+
     async function FillCategoryDropDown() {
     try {
-        let res = await axios.get("/list-resturent-info");
+        let res = await axios.get("/list-resturent-cat");
         if (res.data && res.data.length) {
             res.data.forEach(function (item, i) {
-                let option = `<option value="${item['id']}">${item['resturent_name']}</option>`;
-                $("#resturentName").append(option);
+                let option = `<option value="${item['id']}">${item['name']}</option>`;
+                $("#resturentCategory").append(option);
             });
         } else {
             console.log("No data available");
@@ -140,6 +141,9 @@
         let imageTwo = document.getElementById('imageTwo').value;
         let imageThree = document.getElementById('imageThree').value;
         let imageFour = document.getElementById('imageFour').value;
+
+
+        console.log('Selected Category:', resturentCategory);
 
         if (resturentName.length === 0) {
             errorToast("Resturent Name Required !")
@@ -245,4 +249,3 @@
     }
 
 </script>
-
