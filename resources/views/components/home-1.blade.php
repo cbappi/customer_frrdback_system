@@ -8,6 +8,7 @@
         </button>
         <div class="collapse navbar-collapse" id="header01">
             <ul class="navbar-nav ms-auto mt-3 mt-lg-0 mb-3 mb-lg-0 me-4">
+                <li class="nav-item me-4"><a class="nav-link" href="/">Home</a></li>
                 <li class="nav-item me-4"><a class="nav-link" href="#">About</a></li>
                 <li class="nav-item me-4"><a class="nav-link" href="#">Company</a></li>
                 <li class="nav-item me-4"><a class="nav-link" href="#">Services</a></li>
@@ -112,5 +113,5 @@
         </div>
     </section>
 
- 
+
 

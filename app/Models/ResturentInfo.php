@@ -16,9 +16,9 @@ class ResturentInfo extends Model
         return $this->hasMany(ResturentReview::class, 'resturent_info_id');
     }
 
-   
 
-    public function cat()
+
+    public function resturentcat()
     {
         return $this->belongsTo(ResturentCategory::class, 'resturent_category_id');
     }

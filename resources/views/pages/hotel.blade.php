@@ -20,7 +20,7 @@
     <nav class="navbar sticky-top shadow-sm navbar-expand-lg navbar-light py-2">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img class="img-fluid" src="{{asset('/images/customer review.jpg')}}" alt="" width="220px" height="80px">
+                <img class="img-fluid" href="{{url('/')}}" src="{{asset('/images/customer review.jpg')}}" alt="" width="220px" height="80px">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#header01" aria-controls="header01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -64,12 +64,20 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-lg-8 mx-auto text-center">
-                        <span class="text-muted">Our Companies</span>
-                        <p class="lead text-muted">We are expecting your valuable reviews</p>
+                        <span class="text-muted fs-1">Top Hotels</span>
+                        <p class="lead text-muted">You can search your desired hotels</p>
                     </div>
                 </div>
                 <br/>
-                @include('components.home-cat')
+
+                @include('components.hotel-cat')
+
+
+
+
+
+
+
 
             </div>
         </section>

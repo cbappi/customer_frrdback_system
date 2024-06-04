@@ -15,7 +15,7 @@ async function getList() {
 
 
     //showLoader();
-    let res=await axios.get("/list-front-category");
+    let res=await axios.get("/list-hotel-sub-category");
     //hideLoader();
 
     let tableList=$("#m-list");
@@ -27,13 +27,14 @@ async function getList() {
         let row=`<div class="col-12 col-md-6 col-lg-4 p-3">
                     <div class="card px-0 text-center">
 
-                        <div>
-                            <img class="card-img-top" src="${item['image']}" alt="" height=250 px>
-                        <div>
+                        <a href="/by-category-hotel-listy?id=${item['id']}">
+                                <img src="${item['categoryImg']}" alt="cat_img1" height=250px/>
+                                <div class = "btn btn-outline-primary btn-block mt-1"  >${item['sub_cat_name']}</div>
+                        </a>
 
-                       <div>
-                            <a href="${generateUrl(item['page_url'])}" type="button" class="btn btn-outline-secondary mt-2">${item['cat']}</a>
-                       </div
+
+
+
                     </div>
                  </div>`
         tableList.append(row)
@@ -41,11 +42,7 @@ async function getList() {
 
 }
 
-function generateUrl(pageUrl) {
-  
-    const baseUrl = document.querySelector('meta[name="base-url"]').content;
-    return `${baseUrl}/${pageUrl}`;
-}
+
 
 </script>
 

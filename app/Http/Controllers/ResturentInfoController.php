@@ -19,7 +19,7 @@ class ResturentInfoController extends Controller
         function ResturentInfoList(Request $request)
     {
         $user_id = $request->header('id');
-        return ResturentInfo::with('cat')->where('user_id', $user_id)->get();
+        return ResturentInfo::with('resturentcat')->where('user_id', $user_id)->get();
     }
 
     public function listResturentInfo() {

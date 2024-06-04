@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-md modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Create Customer</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Create Resturent Info</h5>
                 </div>
                 <div class="modal-body">
                     <form id="save-form">

@@ -31,6 +31,9 @@
                                 <label class="form-label">Room feature *</label>
                                 <input type="text" class="form-control" id="roomFeature">
 
+                                <label class="form-label">Room type *</label>
+                                <input type="text" class="form-control" id="roomType">
+
                                 <label class="form-label">Room price start *</label>
                                 <input type="text" class="form-control" id="roomStart">
 
@@ -135,6 +138,7 @@
         let hotelAmenities = document.getElementById('hotelAmenities').value;
         let hotelType = document.getElementById('hotelType').value;
         let roomFeature= document.getElementById('roomFeature').value;
+        let roomType= document.getElementById('roomType').value;
         let roomStart= document.getElementById('roomStart').value;
         let roomLast= document.getElementById('roomLast').value;
         let discount= document.getElementById('discount').value;
@@ -166,6 +170,10 @@
             errorToast("Review Title Required !")
         }
         else if(roomFeature.length===0){
+            errorToast("Review Description Required !")
+        }
+
+        else if(roomType.length===0){
             errorToast("Review Description Required !")
         }
         else if( roomStart.length===0){
@@ -224,6 +232,7 @@
                 hotel_amenities: hotelAmenities,
                 hotel_type:hotelType,
                 room_feature:roomFeature,
+                room_type:roomType,
                 start_room_price:roomStart,
                 last_room_price:roomLast,
                 discount:discount,

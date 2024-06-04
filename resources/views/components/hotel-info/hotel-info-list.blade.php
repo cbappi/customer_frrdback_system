@@ -90,10 +90,10 @@ async function getList() {
             <td>${item.website}</td>
             <td>${item.email}</td>
             <td>${item.phone}</td>
-            <td><img class="w-15 h-auto" alt="" src="${item.image_one}"></td>
-            <td><img class="w-15 h-auto" alt="" src="${item.image_two}"></td>
-            <td><img class="w-15 h-auto" alt="" src="${item.image_three}"></td>
-            <td><img class="w-15 h-auto" alt="" src="${item.image_four}"></td>
+            <td><img class="w-60 h-auto" alt="" src="${item.image_one}"></td>
+            <td><img class="w-60 h-auto" alt="" src="${item.image_two}"></td>
+            <td><img class="w-60 h-auto" alt="" src="${item.image_three}"></td>
+            <td><img class="w-60 h-auto" alt="" src="${item.image_four}"></td>
 
             <td>
                 <button data-id="${item.id}" class="btn editBtn btn-sm btn-outline-success">Edit</button>

@@ -11,6 +11,10 @@ class HotelSubcategoryController extends Controller
         return view('pages.dashboard-admin.hotel-sub-category-page');
     }
 
+    function HotelListByCategoryFrontPage(){
+        return view('pages.by-category-hotel');
+    }
+
     function HotelSubCategoryAdminList(Request $request){
 
            return HotelSubCategory::get();

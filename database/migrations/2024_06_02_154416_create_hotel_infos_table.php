@@ -35,13 +35,12 @@ return new class extends Migration
             $table->string('website',150);
             $table->string('email',50);
             $table->string('phone',50);
-            $table->string('image_one',150);
-            $table->string('image_two',150);
-            $table->string('image_three',150);
-            $table->string('image_four',150);
+            $table->string('image_one');
+            $table->string('image_two');
+            $table->string('image_three');
+            $table->string('image_four');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
-
         });
     }
 

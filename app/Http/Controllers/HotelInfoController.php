@@ -15,6 +15,13 @@ class HotelInfoController extends Controller
         return view('pages.dashboard-user.hotel-info-page');
     }
 
+
+    function HotelFrontPage(){
+        return view('pages.hotel');
+    }
+
+
+
     // function HotelInfoList(Request $request){
     //     $user_id=$request->header('id');
     //     $hotelInfos = HotelInfo::with(['user', 'hotelSubcategory'])->get();
