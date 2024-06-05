@@ -42,7 +42,7 @@
 
 
 
-      
+
 
 
         <section class="pb-5">
@@ -56,7 +56,7 @@
                 <br/>
 
 
-
+                @include('components.ByHotelCategory')
 
 
 
@@ -133,6 +133,13 @@
                 <p class="text-center">All rights reserved © Learn with Rabbil (LWR) 2023-2024</p>
             </div>
         </footer>
+{{-- <script>
+        (async () => {
+
+            await ByCategory();
+
+        })()
+    </script> --}}
 
 @endsection
 

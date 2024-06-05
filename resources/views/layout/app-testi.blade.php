@@ -6,6 +6,13 @@
     <meta name="base-url" content="{{ url('/') }}">
     <title>Review System</title>
 
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+    </style>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="{{asset('/favicon.ico')}}" />
     <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet" />
@@ -33,6 +40,33 @@
 
     <script src="{{asset('js/axios.min.js')}}"></script>
     <script src="{{asset('js/config.js')}}"></script>
+{{-- Can omit below code --}}
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <style>
+        .card-horizontal {
+            display: flex;
+            flex: 1 1 auto;
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+        .btn-custom {
+            margin-right: 10px;
+        }
+    </style>
+
+<style>
+    .container-custom {
+        height: 200px;
+        width: 52px;
+        background-color: #f0f0f0; /* Light grey background for visibility */
+    }
+</style>
 </head>
 
 <body>

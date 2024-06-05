@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 use App\Models\HotelInfo;
-
+use App\Helper\ResponseHelper;
 use App\Models\FrontCategory;
 use App\Models\User;
 use App\Models\HotelSubcategory;
-
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class HotelInfoController extends Controller
@@ -35,6 +35,16 @@ class HotelInfoController extends Controller
         return HotelInfo::with('subcategory','user')->get();
 
     }
+
+
+
+
+    public function ListHotelBySubCategory(Request $request, $id):JsonResponse{
+        $data=HotelInfo::where('hotel_subcategory_id',$request->id)->with('subcategory')->get();
+        return ResponseHelper::Out('success',$data,200);
+    }
+
+
 
     public function HotelSubCategory()
     {

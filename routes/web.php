@@ -57,6 +57,9 @@ Route::get('/list-hotel-info',[HotelInfoController::class,'HotelInfoList']);
 Route::post('/create-hotel-info',[HotelInfoController::class,'HotelInfoCreate'])->middleware([TokenVerificationMiddleware::class]);
 Route::get('/list-hotel-subcategory',[HotelInfoController::class,'HotelSubCategory'])->middleware([TokenVerificationMiddleware::class]);
 
+Route::get('/ListHotelBySubCategory/{id}',[HotelInfoController::class,'ListHotelBySubCategory']);
+
+
 //RESTURENT SUB CATEGORY
 
 Route::get('/resturentsubcategoryadminPage',[ResturentCategoryController::class,'ResturentSubCategoryAdminPage']);

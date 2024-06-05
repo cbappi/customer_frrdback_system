@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class HotelSubcategory extends Model
 {
     use HasFactory;
-    protected $fillable = ['sub_cat_name'];
+    protected $guarded = ['id'];
 }
