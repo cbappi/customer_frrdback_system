@@ -81,9 +81,11 @@ async function ByCategory() {
                             <div class="card-body">
                                 <h3 class="card-title">${item['hotel_name']}</h3>
                                 <p class="fs-3"><i class="fas fa-map-marker-alt"></i> ${item['district']}, ${item['country']}</p>
-                                <p class = "fs-6" id="description-${i}">${truncatedDescription}</p>
-                                <p class="fs-4 text-info">What travelers love most</p>
+                                <p class = "fs-6 lh-sm" id="description-${i}">${truncatedDescription}</p>
+                                <p class="fs-4 text-dark fw-bold lh-sm">What travelers love most</p>
                                 <div class="room-features">${features}</div>
+
+                                <a type="button" class="btn btn-outline-dark ms-2" href="/details-hotel?id=${item['id']}">Details</a>
                             </div>
                         </div>
                     </div>

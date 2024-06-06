@@ -22,13 +22,6 @@ class HotelInfoController extends Controller
 
 
 
-    // function HotelInfoList(Request $request){
-    //     $user_id=$request->header('id');
-    //     $hotelInfos = HotelInfo::with(['user', 'hotelSubcategory'])->get();
-    //    //return response()->json($hotelInfos);
-    //     return $hotelInfos;
-    // }
-
     function HotelInfoList(Request $request)
     {
 
@@ -83,6 +76,20 @@ class HotelInfoController extends Controller
             'hotel_subcategory_id'=>$request->input('hotel_subcategory_id'),
             'user_id' => $user_id
         ]);
+    }
+
+    public function DetailsHotelInfo()
+    {
+        return view('pages.details-hotel-page');
+        // Route::get('/details-hotel', [HotelInfoController::class, 'DetailsHotelInfo']);
+    }
+
+
+
+    public function HotelDetailsById(Request $request, $id): JsonResponse {
+        $data = HotelInfo::where('id', $id)->with('subcategory')->first();
+        return ResponseHelper::Out('success', $data, 200);
+         //Route::get('/ProductDetailsById/{id}', [ProductController::class, 'ProductDetailsById']);
     }
 
 
