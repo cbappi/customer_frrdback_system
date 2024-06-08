@@ -59,6 +59,8 @@ Route::post('/create-hotel-info',[HotelInfoController::class,'HotelInfoCreate'])
 Route::get('/list-hotel-subcategory',[HotelInfoController::class,'HotelSubCategory'])->middleware([TokenVerificationMiddleware::class]);
 
 Route::get('/ListHotelBySubCategory/{id}',[HotelInfoController::class,'ListHotelBySubCategory']);
+//Route::get('/detail-hotel', [HotelInfoController::class, 'DetailsHotelInfo']);
+
 Route::get('/details-hotel', [HotelInfoController::class, 'DetailsHotelInfo']);
 
 Route::get('/HotelDetailsById/{id}', [HotelInfoController::class, 'HotelDetailsById']);
@@ -115,6 +117,11 @@ Route::get('/list-hotel-category',[HotelReviewController::class,'HotelCategory']
 Route::get('/HotelReviewsById/{id}', [HotelReviewController::class, 'HotelReviewsById']);
 Route::get('/reviews/{hotel_info_id}', [HotelReviewController::class, 'getReviewsByHotel']);
 Route::get('hotel-reviews/{hotel_info_id}', [HotelReviewController::class, 'showReviewsPage']);
+
+
+
+
+Route::get('/ListReviewsByHotelId/{id}', [HotelReviewController::class, 'ListReviewsByHotelId']);
 
 //Hotel Sub Category
 Route::get('/hotelsubcategoryadminPage',[HotelSubcategoryController::class,'HotelSubCategoryAdminPage']);

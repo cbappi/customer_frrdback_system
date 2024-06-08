@@ -1,20 +1,6 @@
-{{-- @extends('layout.app')
-@section('content')
-    @include('components.home-1')
-    @include('components.home-cat')
-    @include('components.home-footer')
-
-@endsection --}}
 
 
-
-
-
-
-
- @extends('layout.app-testi')
-
-
+@extends('layout.app-testi')
 @section('content')
 
     <nav class="navbar sticky-top shadow-sm navbar-expand-lg navbar-light py-2">
@@ -57,6 +43,7 @@
 
 
                 @include('components.ByHotelCategory')
+                @include('components.ByHotelReview')
 
 
 

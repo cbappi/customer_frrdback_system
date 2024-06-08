@@ -47,28 +47,34 @@ class HotelReviewController extends Controller
         ]);
     }
 
-    public function HotelReviewsById(Request $request, $id): JsonResponse {
-        $data = HotelReview::where('id', $id)->with('hotel')->first();
-        return ResponseHelper::Out('success', $data, 200);
-        //Route::get('/HotelReviewsById/{id}', [HotelReviewController::class, 'HotelReviewsById']);
-    }
+    // public function HotelReviewsById(Request $request, $id): JsonResponse {
+    //     $data = HotelReview::where('id', $id)->with('hotel')->first();
+    //     return ResponseHelper::Out('success', $data, 200);
 
-    public function HotelReviewsByHotelId(Request $request, $id): JsonResponse {
-        $data = HotelReview::where('hotel_info_id',$request-> $id)->with('hotel')->get();
-        return ResponseHelper::Out('success', $data, 200);
-        //Route::get('/HotelReviewsByHotelId/{id}', [HotelReviewController::class, 'HotelReviewsById']);
-    }
+    // }
 
-    public function showReviewsPage($hotel_info_id)
-{
-    return view('hotel-reviews', compact('hotel_info_id'));
-}
+    // public function HotelReviewsByHotelId(Request $request, $id): JsonResponse {
+    //     $data = HotelReview::where('hotel_info_id',$request-> $id)->with('hotel')->get();
+    //     return ResponseHelper::Out('success', $data, 200);
 
-    public function getReviewsByHotel($hotel_info_id)
+    //    }
+
+    // public function showReviewsPage($hotel_info_id)
+    //     {
+    //         return view('hotel-reviews', compact('hotel_info_id'));
+    //     }
+
+    // public function getReviewsByHotel($hotel_info_id)
+    //     {
+    //         $reviews = HotelReview::where('hotel_info_id', $hotel_info_id)->get();
+    //         return response()->json($reviews);
+
+    //     }
+
+    public function ListReviewsByHotelId(Request $request, $id): JsonResponse
     {
-        $reviews = HotelReview::where('hotel_info_id', $hotel_info_id)->get();
-        return response()->json($reviews);
-
+        $reviews = HotelReview::where('hotel_info_id', $id)->get();
+        return response()->json(['status' => 'success', 'data' => $reviews], 200);
     }
 
 

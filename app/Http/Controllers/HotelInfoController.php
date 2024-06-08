@@ -78,11 +78,82 @@ class HotelInfoController extends Controller
         ]);
     }
 
-    public function DetailsHotelInfo()
-    {
-        return view('pages.details-hotel-page');
-        // Route::get('/details-hotel', [HotelInfoController::class, 'DetailsHotelInfo']);
+    // public function DetailsHotelInfo(Request $request)
+    // {
+
+    //     $hotelId = $request->query('id');
+    //     $hotel = HotelInfo::with('reviews')->find($hotelId);
+
+
+    //     return view('pages.details-hotel-page');
+
+    // }
+
+    public function DetailsHotelInfo(Request $request){
+        return view("pages.details-hotel-page");
     }
+
+    // public function DetailsHotelInfo(Request $request)
+    // {
+    //     $hotelId = $request->query('id');
+    //     $hotelDetails = HotelInfo::with('reviews')->find($hotelId);
+
+    //     if ($hotelDetails) {
+    //         return response()->json([
+    //             'status' => 'success',
+    //             'data' => [
+    //                 'hotel' => $hotelDetails,
+    //                 'reviews' => $hotelDetails->reviews
+    //             ]
+    //         ]);
+    //     } else {
+    //         return response()->json([
+    //             'status' => 'error',
+    //             'message' => 'Hotel not found'
+    //         ], 404);
+    //     }
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // public function DetailsHotelInfo(Request $request)
+    // {
+    //     $hotelId = $request->query('id');
+    //     $hotel = HotelInfo::with('reviews')->find($hotelId);
+
+    //     if ($hotel) {
+    //         return response()->json([
+    //             'data' => $hotel
+    //         ]);
+    //     } else {
+    //         return response()->json([
+    //             'message' => 'Hotel not found'
+    //         ], 404);
+    //     }
+    // }
 
 
 

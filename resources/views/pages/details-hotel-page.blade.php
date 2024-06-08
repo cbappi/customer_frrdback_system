@@ -1,19 +1,5 @@
-{{-- @extends('layout.app')
-@section('content')
-    @include('components.home-1')
-    @include('components.home-cat')
-    @include('components.home-footer')
-
-@endsection --}}
-
-
-
-
-
-
 
  @extends('layout.app-testi')
-
 
 @section('content')
 
@@ -49,7 +35,8 @@
             <div class="container">
 
                 @include('components.HotelDetails')
-                @include('components.HotelReviewDetails')
+                {{-- @include('components.HotelReviewDetails') --}}
+                @include('components.ByHotelReview')
 
 
         </section>

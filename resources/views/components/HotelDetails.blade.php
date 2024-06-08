@@ -19,7 +19,6 @@
     <p  class="fs-1 text-center">Exlore Hotel Details in <span id="district-text" class="fs-1 text-center"></span></p>
 
 
-
     <div class="row">
       <div class="col-md-2">
 
@@ -85,7 +84,6 @@
 
   </div>
 </div>
-
 
   <div class="container mt-5" >
     <div class="row">
@@ -183,7 +181,6 @@ details.hotel_amenities.split(',').forEach(amenity => {
   document.getElementById('amenities').appendChild(amenityDiv);
 });
 
-
       // Clear existing amenities
 
 document.getElementById('room-feature').innerHTML = '';
@@ -228,7 +225,6 @@ details.room_feature.split(',').forEach(feature => {
       });
 
 
-
     } else {
       console.error('No details found for hotel ID:', id);
     }
@@ -237,6 +233,4 @@ details.room_feature.split(',').forEach(feature => {
   }
 }
 
-
 </script>
-
