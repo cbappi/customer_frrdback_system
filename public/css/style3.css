@@ -1,0 +1,141 @@
+body {
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    font-family:sans-serif;
+    background-color:#fff
+
+  }
+
+  .testimotionals {
+  width:350px;
+   display:inline-block;
+    margin-left:50px;
+    margin-top:50px
+
+  }
+
+
+  .testimotionals .card {
+
+    position:relative;
+    overflow:hidden;
+    width:350px;
+    margin:0 auto;
+    background:#333;
+    padding:20px;
+    box-sizing:border-box;
+    text-align:center;
+    box-shadow:0 10px 40px rgba(0,0,0,.5)
+  }
+  .testimotionals .card .layer {
+    z-index:1;
+    position:absolute;
+    top:calc(100% - 2px);
+    height:100%;
+    width:100%;
+    left:0;
+    background:linear-gradient(to left , orange, tomato);
+    transition:0.5s;
+
+  }
+
+  .testimotionals .card .content {
+    z-index:2;
+    position:relative;
+  }
+
+  .testimotionals .card:hover  .layer{
+    top:0;
+  }
+
+  .testimotionals .card .content p {
+    font-size:14px;
+    line-height:24px;
+    color:#fff;
+
+  }
+  .testimotionals .card .content .image {
+    width:100px; height:100px;
+    margin:0 auto;
+    border-radius:50%;
+    overflow:hidden;
+    border: 4px solid white;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+
+  }
+
+  .testimotionals .card .conte nt .details h2 {
+  font-size:18px;
+  color:white;
+  }
+  .testimotionals .card .content .details h2 span {
+  font-size:18px;
+  color:purple;
+    transition:0.5s;
+  }
+  .testimotionals .card:hover .content .details h2 span {
+    color:white;
+    position:relative
+  }
+
+  body{
+    margin-bottom:20px
+  }
+
+
+  .product .rating_wrap {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
+	position: relative;
+}
+.product.text-center .rating_wrap {
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+.rating_num {
+    font-size: 14px;
+    margin-left: 5px;
+    vertical-align: middle;
+    display: inline-block;
+}
+.rating_wrap .rating {
+    overflow: hidden;
+    position: relative;
+    height: 20px;
+    font-size: 12px;
+    width: 70px;
+    font-family: "Font Awesome 5 Free";
+    display: inline-block;
+    vertical-align: middle;
+}
+.rating::before {
+	font-size: 12px;
+	content: "\f005\f005\f005\f005\f005";
+	top: 0;
+	position: absolute;
+	left: 0;
+	float: left;
+	color: #204d4a;
+}
+.product_rate {
+	overflow: hidden;
+	float: left;
+	top: 0;
+	left: 0;
+	position: absolute;
+	padding-top: 1.5em;
+	color: #0f4f24;
+}
+.product_rate::before {
+	font-size: 12px;
+	content: "\f005\f005\f005\f005\f005";
+	top: 0;
+	position: absolute;
+	left: 0;
+	font-weight: 900;
+}
+

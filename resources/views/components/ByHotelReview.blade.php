@@ -40,12 +40,19 @@ async function ByHotelReviews() {
     res.data['data'].forEach((review, i) => {
         let EachReview = `
             <div class="col-md-12 review-card">
-                <h3>${review['review_title']}</h3>
-                <p>${review['review_des']}</p>
-                <p class="rating">Rating: ${review['rating']} / 5</p>
-                <p><strong>Reviewed by:</strong> ${review['name']}</p>
-                <p><strong>Year:</strong> ${review['year']}</p>
-                <p><strong>Go with:</strong> ${review['gowith']}</p>
+                    <h3>${review['review_title']}</h3>
+                    <p>${review['review_des']}</p>
+
+                          <div class="rating_wrap">
+                          <div class="rating">
+                             <div class="product_rate" style="width:${review['rating']}%"></div>
+                          </div>
+                          </div>
+
+
+                    <p><strong>Reviewed by:</strong> ${review['name']}</p>
+                    <p><strong>Year:</strong> ${review['year']}</p>
+                    <p><strong>Go with:</strong> ${review['gowith']}</p>
             </div>`;
         reviewList.append(EachReview);
     });

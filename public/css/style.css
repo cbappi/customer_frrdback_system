@@ -59,3 +59,60 @@ a:hover {
   box-shadow: none !important;
 }
 
+
+.product .rating_wrap {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
+	position: relative;
+}
+.product.text-center .rating_wrap {
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+.rating_num {
+    font-size: 14px;
+    margin-left: 5px;
+    vertical-align: middle;
+    display: inline-block;
+}
+.rating_wrap .rating {
+    overflow: hidden;
+    position: relative;
+    height: 20px;
+    font-size: 12px;
+    width: 70px;
+    font-family: "Font Awesome 5 Free";
+    display: inline-block;
+    vertical-align: middle;
+}
+.rating::before {
+	font-size: 12px;
+	content: "\f005\f005\f005\f005\f005";
+	top: 0;
+	position: absolute;
+	left: 0;
+	float: left;
+	color: #F6BC3E;
+}
+.product_rate {
+	overflow: hidden;
+	float: left;
+	top: 0;
+	left: 0;
+	position: absolute;
+	padding-top: 1.5em;
+	color: #F6BC3E;
+}
+.product_rate::before {
+	font-size: 12px;
+	content: "\f005\f005\f005\f005\f005";
+	top: 0;
+	position: absolute;
+	left: 0;
+	font-weight: 900;
+}
+
+
+
