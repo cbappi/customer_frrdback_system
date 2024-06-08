@@ -18,6 +18,7 @@ use App\Http\Controllers\ResturentInfoController;
 use App\Http\Controllers\UserDashboardController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Middleware\TokenVerificationMiddleware;
+use App\Http\Controllers\Admin\HotelReviewController;
 use App\Http\Controllers\Admin\ResturentReviewController;
 use App\Http\Middleware\AdminTokenVerificationMiddleware;
 use App\Http\Controllers\Admin\HotelSubcategoryController;
@@ -98,6 +99,22 @@ Route::post('/create-resturent-review',[ResturentReviewController::class,'Restur
 
 Route::get('/list-resturent-category',[ResturentReviewController::class,'ResturentCategory']);
 
+
+//HOTEL REVIEW
+
+Route::get('/hotelreviewPage',[HotelReviewController::class,'HotelReviewPage']);
+
+Route::get('/list-hotel-info', [HotelReviewController::class, 'HotelInfoList']);
+
+
+Route::get('/list-hotel-review',[HotelReviewController::class,'HotelReviewList']);
+
+Route::post('/create-hotel-review',[HotelReviewController::class,'HotelReviewCreate']);
+
+Route::get('/list-hotel-category',[HotelReviewController::class,'HotelCategory']);
+Route::get('/HotelReviewsById/{id}', [HotelReviewController::class, 'HotelReviewsById']);
+Route::get('/reviews/{hotel_info_id}', [HotelReviewController::class, 'getReviewsByHotel']);
+Route::get('hotel-reviews/{hotel_info_id}', [HotelReviewController::class, 'showReviewsPage']);
 
 //Hotel Sub Category
 Route::get('/hotelsubcategoryadminPage',[HotelSubcategoryController::class,'HotelSubCategoryAdminPage']);

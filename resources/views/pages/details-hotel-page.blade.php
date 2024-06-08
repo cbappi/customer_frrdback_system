@@ -49,11 +49,12 @@
             <div class="container">
 
                 @include('components.HotelDetails')
+                @include('components.HotelReviewDetails')
 
 
         </section>
 
- 
+
 
 
 
