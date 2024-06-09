@@ -43,7 +43,7 @@
 
 
                 @include('components.ByHotelCategory')
-                @include('components.ByHotelReview')
+                {{-- @include('components.ByHotelReview') --}}
 
 
 
