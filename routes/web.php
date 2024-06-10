@@ -11,6 +11,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 
 use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\BookNamesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HotelInfoController;
 use App\Http\Controllers\FrontCategoryController;
@@ -19,6 +20,7 @@ use App\Http\Controllers\UserDashboardController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Middleware\TokenVerificationMiddleware;
 use App\Http\Controllers\Admin\HotelReviewController;
+use App\Http\Controllers\Admin\BookCategoryController;
 use App\Http\Controllers\Admin\ResturentReviewController;
 use App\Http\Middleware\AdminTokenVerificationMiddleware;
 use App\Http\Controllers\Admin\HotelSubcategoryController;
@@ -47,6 +49,25 @@ Route::get('/frontcategoryPage',[FrontCategoryController::class,'FrontCategoryPa
 Route::get('/frontcategoryData',[FrontCategoryController::class,'FrontcategoryData']);
 Route::get("/list-front-category",[FrontCategoryController::class,'FrontCategoryList']);
 Route::post("/create-front-category",[FrontCategoryController::class,'FrontCategoryCreate']);
+
+
+
+
+// BOOK CATEGORY
+Route::get('/book-page',[BookCategoryController::class,'BookFrontPage']);
+Route::get('/bookcategoryadminPage',[BookCategoryController::class,'BookCategoryAdminPage']);
+
+Route::get('/list-book-category',[BookCategoryController::class,'BookCategoryAdminList']);
+Route::post("/create-book-category",[BookCategoryController::class,'BookCategoryAdminCreate']);
+
+
+Route::get('/by-category-hotel-listy',[HotelSubcategoryController::class,'HotelListByCategoryFrontPage']);
+
+//BOOK NAME
+Route::get('/booknameadminPage',[BookNamesController::class,'BookNameAdminPage']);
+Route::get('/list-book-name',[BookNamesController::class,'BookNameAdminList']);
+Route::post("/create-book-name",[BookNamesController::class,'BookNameAdminCreate']);
+
 
 //HOTEL INFO
 
@@ -117,13 +138,17 @@ Route::get('/list-hotel-category',[HotelReviewController::class,'HotelCategory']
 Route::get('/HotelReviewsById/{id}', [HotelReviewController::class, 'HotelReviewsById']);
 Route::get('/reviews/{hotel_info_id}', [HotelReviewController::class, 'getReviewsByHotel']);
 Route::get('hotel-reviews/{hotel_info_id}', [HotelReviewController::class, 'showReviewsPage']);
-
+Route::get('/AverageReviewsBySubCategory/{id}', [HotelReviewController::class, 'getAverageReviewsBySubCategory']);
 
 
 
 Route::get('/ListReviewsByHotelId/{id}', [HotelReviewController::class, 'ListReviewsByHotelId']);
 
 //Hotel Sub Category
+
+//Route::get('/by-category-hotel-list', [HotelSubcategoryController::class, 'HotelListByCategoryFrontPage']);
+Route::post('/sub-category-hotel-by-id', [HotelSubcategoryController::class, 'HotelSubCatByID']);
+
 Route::get('/hotelsubcategoryadminPage',[HotelSubcategoryController::class,'HotelSubCategoryAdminPage']);
 Route::get('/by-category-hotel-listy',[HotelSubcategoryController::class,'HotelListByCategoryFrontPage']);
 Route::get('/list-hotel-sub-category',[HotelSubcategoryController::class,'HotelSubCategoryAdminList']);

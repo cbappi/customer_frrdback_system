@@ -46,7 +46,6 @@
                 {{-- @include('components.ByHotelReview') --}}
 
 
-
             </div>
         </section>
 

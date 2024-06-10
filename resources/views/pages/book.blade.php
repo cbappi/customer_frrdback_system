@@ -1,12 +1,13 @@
 
- @extends('layout.app-testi')
+@extends('layout.app-testi')
+
 
 @section('content')
 
     <nav class="navbar sticky-top shadow-sm navbar-expand-lg navbar-light py-2">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img class="img-fluid" src="{{asset('/images/customer review.jpg')}}" alt="" width="220px" height="80px">
+                <img class="img-fluid" href="{{url('/')}}" src="{{asset('/images/customer review.jpg')}}" alt="" width="220px" height="80px">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#header01" aria-controls="header01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -24,16 +25,61 @@
         </div>
     </nav>
 
-
         <section class="pb-5">
             <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-8 mx-auto text-center">
+                        <span class="text-muted fs-1">Book Categories</span>
+                        <p class="lead text-muted">You can search your desired books</p>
+                    </div>
+                </div>
+                <br/>
 
-                @include('components.HotelDetails')
-                {{-- @include('components.HotelReviewDetails') --}}
-                @include('components.ByHotelReview')
+                @include('components.book-cat')
 
 
+
+
+
+
+
+
+            </div>
         </section>
+
+        <br/>
+
+        <section class="py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-5 mb-5 mb-lg-0">
+                        <h2 class="fw-bold mb-5">Reach Out to Us: Let's Connect and Explore Opportunities Together</h2>
+                        <h4 class="fw-bold">Address</h4>
+                        <p class="text-muted mb-5">1686 Geraldine Lane New York, NY 10013</p>
+                        <h4 class="fw-bold">Contact Us</h4>
+                        <p class="text-muted mb-1">hello@wireframes.org</p>
+                        <p class="text-muted mb-0">+ 7-843-672-431</p>
+                    </div>
+                    <div class="col-12 col-lg-6 offset-lg-1">
+                        <form action="#">
+                            <input class="form-control mb-3" type="text" placeholder="Name">
+                            <input class="form-control mb-3" type="email" placeholder="E-mail">
+                            <textarea class="form-control mb-3" name="message" cols="30" rows="10" placeholder="Your Message..."></textarea>
+                            <button class="btn bg-gradient-primary w-100">Action</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
 
         <footer class="py-5 bg-light">
             <div class="container text-center pb-5 border-bottom">

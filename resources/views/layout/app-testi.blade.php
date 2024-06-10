@@ -12,6 +12,7 @@
             font-family: 'Lato', sans-serif;
         }
     </style>
+  
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="{{asset('/favicon.ico')}}" />

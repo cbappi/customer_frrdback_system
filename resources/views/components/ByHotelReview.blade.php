@@ -7,6 +7,9 @@
 
 </div>
 
+
+
+
 <style>
     .review-card {
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -63,6 +66,8 @@
         height: 20px;
     }
 </style>
+
+
 
 <script>
 ByHotelReviews();

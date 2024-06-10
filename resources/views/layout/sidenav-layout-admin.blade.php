@@ -90,7 +90,15 @@
 
 
 
+            <a href="{{url("/booknameadminPage")}}" class="side-bar-item">
+                <i class="bi bi-list-nested"></i>
+                <span class="side-bar-item-caption">Book Name</span>
+            </a>
 
+            <a href="{{url("/bookcategoryadminPage")}}" class="side-bar-item">
+                <i class="bi bi-list-nested"></i>
+                <span class="side-bar-item-caption">Book Category</span>
+            </a>
 
             <a href="{{url("/hotelsubcategoryadminPage")}}" class="side-bar-item">
                 <i class="bi bi-list-nested"></i>

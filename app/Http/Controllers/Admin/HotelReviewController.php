@@ -9,6 +9,8 @@ use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class HotelReviewController extends Controller
 {
@@ -23,6 +25,8 @@ class HotelReviewController extends Controller
         return HotelReview::with('hotel')->get();
 
     }
+
+
     public function HotelInfoList()
     {
         return HotelInfo::all();
@@ -75,6 +79,33 @@ class HotelReviewController extends Controller
     {
         $reviews = HotelReview::where('hotel_info_id', $id)->get();
         return response()->json(['status' => 'success', 'data' => $reviews], 200);
+    }
+
+    // public function getAverageReviewsBySubCategory($id): JsonResponse
+    // {
+    //     $data = HotelInfo::where('hotel_subcategory_id', $id)
+    //         ->leftJoin('hotel_reviews', 'hotel_info.id', '=', 'hotel_reviews.hotel_id')
+    //         ->select('hotel_info.id', 'hotel_info.hotel_name', DB::raw('AVG(hotel_reviews.rating) as average_rating'))
+    //         ->groupBy('hotel_info.id', 'hotel_info.hotel_name')
+    //         ->get();
+
+    //     return ResponseHelper::Out('success', $data, 200);
+    // }
+
+    public function getAverageReviewsBySubCategory($subCategoryId) {
+        $hotels = HotelInfo::where('hotel_subcategory_id', $subCategoryId)->with('reviews')->get();
+        $data = $hotels->map(function($hotel) {
+            $reviewCount = $hotel->reviews->count();
+            $averageRating = $hotel->reviews->avg('rating');
+            return [
+                'id' => $hotel->id,
+                'hotel_name' => $hotel->hotel_name,
+                'average_rating' => $averageRating,
+                'review_count' => $reviewCount
+            ];
+        });
+
+        return response()->json(['data' => $data], 200);
     }
 
 
