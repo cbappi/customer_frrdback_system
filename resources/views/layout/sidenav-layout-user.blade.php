@@ -88,6 +88,10 @@
                 <i class="bi bi-bag"></i>Resturent Info</span>
             </a>
 
+            <a href="{{url("/bookinfoPage")}}" class="side-bar-item">
+                <i class="bi bi-bag"></i>Book Info</span>
+            </a>
+
         </li>
 
 

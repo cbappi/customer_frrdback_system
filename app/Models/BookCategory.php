@@ -8,5 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class BookCategory extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'catimg'];
+
+    protected $fillable = [
+        'name',
+        'imgcat'
+    ];
+
+    public function bookInfos()
+    {
+        return $this->hasMany(BookInfo::class, 'book_name_id');
+    }
+
+  
 }

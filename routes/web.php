@@ -6,10 +6,11 @@ use App\Http\Controllers\UserController;
 
 
 
+use App\Http\Controllers\BookInfoController;
+
 use App\Http\Controllers\CategoryController;
 
 use App\Http\Controllers\CustomerController;
-
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\BookNamesController;
 use App\Http\Controllers\DashboardController;
@@ -67,6 +68,13 @@ Route::get('/by-category-hotel-listy',[HotelSubcategoryController::class,'HotelL
 Route::get('/booknameadminPage',[BookNamesController::class,'BookNameAdminPage']);
 Route::get('/list-book-name',[BookNamesController::class,'BookNameAdminList']);
 Route::post("/create-book-name",[BookNamesController::class,'BookNameAdminCreate']);
+
+//BOOK INFO
+Route::get('/bookinfoPage',[BookInfoController::class,'BookInfoPage'])->middleware([TokenVerificationMiddleware::class]);
+Route::get('/list-book-info',[BookInfoController::class,'BookInfoList'])->middleware([TokenVerificationMiddleware::class]);
+//Route::get('/booknameadminPage',[BookNamesController::class,'BookNameAdminPage']);
+//Route::get('/list-book-name',[BookNamesController::class,'BookNameAdminList']);
+//Route::post("/create-book-name",[BookNamesController::class,'BookNameAdminCreate']);
 
 
 //HOTEL INFO

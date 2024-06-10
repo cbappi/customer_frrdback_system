@@ -139,3 +139,7 @@ body {
 	font-weight: 900;
 }
 
+.table-fixed-width {
+    width: 150px!important;
+}
+

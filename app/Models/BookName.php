@@ -9,5 +9,12 @@ class BookName extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $fillable = [
+        'name'
+    ];
+
+    public function bookInfos()
+    {
+        return $this->hasMany(BookInfo::class);
+    }
 }
