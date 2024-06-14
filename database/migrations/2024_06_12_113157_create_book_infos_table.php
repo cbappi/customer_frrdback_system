@@ -15,14 +15,13 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('book_category_id');
-            $table->unsignedBigInteger('book_name_id');
+       
 
             $table->foreign('user_id')->references('id')->on('users')
             ->cascadeOnUpdate()->restrictOnDelete();
             $table->foreign('book_category_id')->references('id')->on('book_categories')
             ->cascadeOnUpdate()->restrictOnDelete();
-            $table->foreign('book_name_id')->references('id')->on('book_names')
-                ->cascadeOnUpdate()->restrictOnDelete();
+
 
             $table->string('book_name');
             $table->text('book_description');

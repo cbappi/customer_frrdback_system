@@ -15,6 +15,7 @@ use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\BookNamesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HotelInfoController;
+use App\Http\Controllers\BookReviewController;
 use App\Http\Controllers\FrontCategoryController;
 use App\Http\Controllers\ResturentInfoController;
 use App\Http\Controllers\UserDashboardController;
@@ -56,27 +57,31 @@ Route::post("/create-front-category",[FrontCategoryController::class,'FrontCateg
 
 // BOOK CATEGORY
 Route::get('/book-page',[BookCategoryController::class,'BookFrontPage']);
+
 Route::get('/bookcategoryadminPage',[BookCategoryController::class,'BookCategoryAdminPage']);
 
 Route::get('/list-book-category',[BookCategoryController::class,'BookCategoryAdminList']);
+
 Route::post("/create-book-category",[BookCategoryController::class,'BookCategoryAdminCreate']);
 
 
-Route::get('/by-category-hotel-listy',[HotelSubcategoryController::class,'HotelListByCategoryFrontPage']);
+Route::get('/by-category-book-listy',[BookCategoryController::class,'BookListByCategoryFrontPage']);
 
-//BOOK NAME
-Route::get('/booknameadminPage',[BookNamesController::class,'BookNameAdminPage']);
-Route::get('/list-book-name',[BookNamesController::class,'BookNameAdminList']);
-Route::post("/create-book-name",[BookNamesController::class,'BookNameAdminCreate']);
+
 
 //BOOK INFO
 Route::get('/bookinfoPage',[BookInfoController::class,'BookInfoPage'])->middleware([TokenVerificationMiddleware::class]);
 Route::get('/list-book-info',[BookInfoController::class,'BookInfoList'])->middleware([TokenVerificationMiddleware::class]);
-//Route::get('/booknameadminPage',[BookNamesController::class,'BookNameAdminPage']);
-//Route::get('/list-book-name',[BookNamesController::class,'BookNameAdminList']);
-//Route::post("/create-book-name",[BookNamesController::class,'BookNameAdminCreate']);
+Route::get('/ListBookByCategory/{id}',[BookInfoController::class,'ListBookByCategory']);
+Route::get('/details-book', [BookInfoController::class, 'DetailsBookInfo']);
+Route::get('/BookDetailsById/{id}', [BookInfoController::class, 'BookDetailsById']);
 
 
+//BOOK REVIEW
+Route::get('/bookreviewPage',[BookReviewController::class,'BookReviewPage']);
+Route::get('/list-book-review', [BookReviewController::class, 'BookReviewList']);
+Route::post('/create-book-review', [BookReviewController::class, 'BookReviewCreate']);
+Route::get('/ListReviewsByBookId/{id}', [BookReviewController::class, 'ListReviewsByBookId']);
 //HOTEL INFO
 
 Route::get('/hotel-page',[HotelInfoController::class,'HotelFrontPage']);
@@ -86,6 +91,7 @@ Route::get('/hotelinfoPage',[HotelInfoController::class,'HotelInfoPage']);
 Route::get('/list-hotel-info',[HotelInfoController::class,'HotelInfoList']);
 Route::post('/create-hotel-info',[HotelInfoController::class,'HotelInfoCreate'])->middleware([TokenVerificationMiddleware::class]);
 Route::get('/list-hotel-subcategory',[HotelInfoController::class,'HotelSubCategory'])->middleware([TokenVerificationMiddleware::class]);
+Route::get('/HotelDetailsById/{id}', [HotelInfoController::class, 'HotelDetailsById']);
 
 Route::get('/ListHotelBySubCategory/{id}',[HotelInfoController::class,'ListHotelBySubCategory']);
 //Route::get('/detail-hotel', [HotelInfoController::class, 'DetailsHotelInfo']);

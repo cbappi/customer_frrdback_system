@@ -41,6 +41,7 @@
 <script>
     async function getList() {
         let res = await axios.get("/list-book-info");
+        console.log('Response Data:', res.data); // Add this line for debugging
 
         let tableList = $("#tableList");
         let tableData = $("#tableData");
@@ -53,7 +54,7 @@
                 <td class="table-fixed-width">${index + 1}</td>
                 <td class="table-fixed-width">${item.user_id}</td>
                 <td class="table-fixed-width">${item.book_category ? item.book_category.name : 'N/A'}</td>
-                <td class="table-fixed-width">${item.book_name ? item.book_name.name : 'N/A'}</td>
+                <td class="table-fixed-width">${item.book_name}</td>
                 <td class="table-fixed-width">${item.book_description}</td>
                 <td class="table-fixed-width">${item.author}</td>
                 <td class="table-fixed-width">${item.publisher}</td>
@@ -62,7 +63,7 @@
                 <td class="table-fixed-width">${item.pages}</td>
                 <td class="table-fixed-width">${item.country}</td>
                 <td class="table-fixed-width">${item.language}</td>
-                <td class="table-fixed-width"><img class="w-60 h-auto"  alt="" src="${item.image_one}"></td>
+                <td class="table-fixed-width"><img class="w-60 h-auto" alt="" src="${item.image_one}"></td>
                 <td class="table-fixed-width">
                     <button data-id="${item.id}" class="btn editBtn btn-sm btn-outline-success">Edit</button>
                     <button data-id="${item.id}" class="btn deleteBtn btn-sm btn-outline-danger">Delete</button>
@@ -91,3 +92,4 @@
 
     getList();
 </script>
+

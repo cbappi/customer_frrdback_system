@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('book_reviews', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('book_name_id');
+            $table->unsignedBigInteger('book_info_id');
 
-            $table->foreign('book_name_id')->references('id')->on('book_names')
+            $table->foreign('book_info_id')->references('id')->on('book_infos')
                 ->cascadeOnUpdate()->restrictOnDelete();
 
 
@@ -29,7 +29,6 @@ return new class extends Migration
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
-
     }
 
     /**

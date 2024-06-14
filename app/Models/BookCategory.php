@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -16,8 +15,6 @@ class BookCategory extends Model
 
     public function bookInfos()
     {
-        return $this->hasMany(BookInfo::class, 'book_name_id');
+        return $this->hasMany(BookInfo::class, 'book_category_id');
     }
-
-  
 }

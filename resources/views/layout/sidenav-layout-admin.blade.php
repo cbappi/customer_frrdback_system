@@ -100,6 +100,12 @@
                 <span class="side-bar-item-caption">Book Category</span>
             </a>
 
+            <a href="{{url("/bookreviewPage")}}" class="side-bar-item">
+                <i class="bi bi-list-nested"></i>
+                <span class="side-bar-item-caption">Book Review</span>
+            </a>
+          
+
             <a href="{{url("/hotelsubcategoryadminPage")}}" class="side-bar-item">
                 <i class="bi bi-list-nested"></i>
                 <span class="side-bar-item-caption">Hotel Sub Category</span>

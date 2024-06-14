@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class BookInfo extends Model
 {
     use HasFactory;
+
     protected $guarded = ['id'];
 
     public function user()
@@ -20,8 +21,11 @@ class BookInfo extends Model
         return $this->belongsTo(BookCategory::class, 'book_category_id');
     }
 
-    public function bookName()
+
+    public function bookReviews()
     {
-        return $this->belongsTo(BookName::class, 'book_name_id');
+        return $this->hasMany(BookReview::class, 'book_info_id');
     }
 }
+
+

@@ -31,7 +31,7 @@ class BookCategoryController extends Controller
  }
 
     function BookListByCategoryFrontPage(){
-        return view('pages.by-category-hotel');
+        return view('pages.by-category-book');
     }
 
 
