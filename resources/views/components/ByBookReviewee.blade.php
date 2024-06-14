@@ -1,38 +1,13 @@
+
+<?
+
 <div class="container mt-5">
-    <h2 class="text-center" style="color:#9b9797;">Reviews for <span id="HotelName"></span></h2>
 
-<div class = "row">
-
-    <div class = "card col-md-6 border border-success border-1 rounded" id="averageRating" class="row justify-content-center mt-3"></div>
-    <div class = "card col-md-6 card col-md-6 border border-success border-1 rounded" id="averageStar" class="row justify-content-center mt-3">
-        <h4 class="text-center" style="color:#9b9797;">Rating Breakdown</h4>
+    <div id="averageRating" class="row justify-content-center mt-3">
     </div>
 
-</div>
 
 
-    <div class="row mt-4">
-        <div class="col-md-4 mb-2">
-            <button class="btn btn-primary w-100 filter-btn active" data-filter="all">All Reviews</button>
-        </div>
-        <div class="col-md-4 mb-2">
-            <button class="btn btn-secondary w-100 filter-btn" data-filter="excellent">Excellent Reviews</button>
-        </div>
-        <div class="col-md-4 mb-2">
-            <button class="btn btn-success w-100 filter-btn" data-filter="good">Good Reviews</button>
-        </div>
-        <div class="col-md-4 mb-2">
-            <button class="btn btn-info w-100 filter-btn" data-filter="average">Average Reviews</button>
-        </div>
-        <div class="col-md-4 mb-2">
-            <button class="btn btn-warning w-100 filter-btn" data-filter="poor">Poor Reviews</button>
-        </div>
-        <div class="col-md-4 mb-2">
-            <button class="btn btn-danger w-100 filter-btn" data-filter="worse">Worse Reviews</button>
-        </div>
-    </div>
-
-    <div id="reviewList" class="row justify-content-center mt-3"></div>
 </div>
 
 <style>
@@ -92,8 +67,7 @@
 
     .filter-btn {
         cursor: pointer;
-        border: 2px solid black;
-        background-color: rgb(239, 229, 229);
+
         color:black;
     }
 
@@ -115,40 +89,12 @@ async function ByHotelReviews() {
     $("#HotelName").text(hotelRes.data['data']['book_name']);
     let reviewList = $("#reviewList");
 
-    // Initialize counters for each category
-    let excellentCount = 0;
-    let goodCount = 0;
-    let averageCount = 0;
-    let poorCount = 0;
-    let worseCount = 0;
-
     let totalRating = 0;
     let reviewCount = res.data['data'].length;
 
     res.data['data'].forEach((review, i) => {
         let formattedDate = formatDate(review['created_at']);
         totalRating += review['rating'];
-
-        // Increment respective counter based on rating
-        switch (review['rating']) {
-            case 100:
-                excellentCount++;
-                break;
-            case 80:
-                goodCount++;
-                break;
-            case 60:
-                averageCount++;
-                break;
-            case 40:
-                poorCount++;
-                break;
-            case 20:
-                worseCount++;
-                break;
-            default:
-                break;
-        }
 
         let EachReview = `
             <div class="col-md-12 review-card" data-rating="${review['rating']}">
@@ -178,7 +124,7 @@ async function ByHotelReviews() {
     let averageRatingPercentage = (averageRating / 5) * 100;
 
     let averageRatingHtml = `
-        <h4 class="text-center" style="color:#9b9797;">Average Rating</h4>
+        <h3 class="text-center" style="color:#9b9797;">Average Rating</h3>
         <div class="d-flex justify-content-center align-items-center">
             <div class="rating_wrap">
                 <div class="rating">
@@ -191,48 +137,12 @@ async function ByHotelReviews() {
 
     $("#averageRating").append(averageRatingHtml);
 
-    // Display counts for each category
-    displayCategoryCount('Excellent', excellentCount);
-    displayCategoryCount('Good', goodCount);
-    displayCategoryCount('Average', averageCount);
-    displayCategoryCount('Poor', poorCount);
-    displayCategoryCount('Worse', worseCount);
-
     // Add click event listeners to filter buttons
     document.querySelectorAll('.filter-btn').forEach(button => {
         button.addEventListener('click', function() {
             filterReviews(this.getAttribute('data-filter'));
         });
     });
-}
-
-function displayCategoryCount(category, count) {
-    let stars = '';
-
-    switch (category.toLowerCase()) {
-        case 'excellent':
-            stars = '<i class="fas fa-star" style="color: green;"></i>'.repeat(5);
-            break;
-        case 'good':
-            stars = '<i class="fas fa-star" style="color: green;"></i>'.repeat(4) + '<i class="far fa-star" style="color: green;"></i>';
-            break;
-        case 'average':
-            stars = '<i class="fas fa-star" style="color: green;"></i>'.repeat(3) + '<i class="far fa-star" style="color: green;"></i>'.repeat(2);
-            break;
-        case 'poor':
-            stars = '<i class="fas fa-star" style="color: green;"></i>'.repeat(2) + '<i class="far fa-star" style="color: green;"></i>'.repeat(3);
-            break;
-        case 'worse':
-            stars = '<i class="fas fa-star" style="color: green;"></i>' + '<i class="far fa-star" style="color: green;"></i>'.repeat(4);
-            break;
-        default:
-            stars = '';
-            break;
-    }
-
-    let countHtml = `<p class = "text-center">${category}: ${stars} ${count}</p>`;
-    //$("#reviewList").append(countHtml);
-    $("#averageStar").append(countHtml);
 }
 
 function filterReviews(filter) {
@@ -271,3 +181,4 @@ function formatDate(dateString) {
     return `${year}-${month}-${day}`;
 }
 </script>
+

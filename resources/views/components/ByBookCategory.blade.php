@@ -1,4 +1,3 @@
-<!-- START SECTION BREADCRUMB -->
 <div class="breadcrumb_section bg_gray page-title-mini">
     <div class="container">
         <div class="row align-items-center">
@@ -63,7 +62,6 @@ async function ByCategory() {
     let tableList = $("#byCategoryList");
     res.data['data'].forEach((item, i) => {
 
-
         let description = item['book_description'];
         let truncatedDescription = truncateDescription(description, 50, i);
         let EachItem = `
@@ -80,7 +78,6 @@ async function ByCategory() {
 
                                 <p class="fs-6 lh-sm" id="description-${i}">${truncatedDescription}</p>
 
-
                                 <a type="button" class="btn btn-outline-dark ms-2" href="/details-book?id=${item['id']}">Details</a>
                             </div>
                         </div>
@@ -90,7 +87,6 @@ async function ByCategory() {
         $("#byCategoryList").append(EachItem);
         $("#CatName").text(res.data['data'][0]['book_category']['name']);
     });
-
 
 }
 
@@ -102,7 +98,6 @@ function truncateDescription(description, wordLimit, index) {
     }
     return description;
 }
-
 
 
 document.addEventListener('click', function(e) {
@@ -121,5 +116,6 @@ document.addEventListener('click', function(e) {
     }
 });
 
-
 </script>
+
+

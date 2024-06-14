@@ -31,7 +31,7 @@
             </div>
         </div>
         <br/>
-        @include('components.ByBookReview')
+        @include('components.ByBookReviewee')
         @include('components.ByBookCategory')
     </div>
 </section>
